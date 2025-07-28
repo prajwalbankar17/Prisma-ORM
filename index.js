@@ -44,12 +44,21 @@ const main = async () => {
 //   console.log("User: ", user);
 
     //Get users with filtering
-  const user = await prisma.user.findMany({
-    where: {
-      name: prajwal,
-    },
-  });
-  console.log("User: ", user);
+//   const user = await prisma.user.findMany({
+//     where: {
+//       name: prajwal,
+//     },
+//   });
+//   console.log("User: ", user);
+
+//update (modify data)
+//update one user
+
+const updateUser = await prisma.user.update({
+    where : {id:1},
+    data: {name:"Rocky"}
+})
+console.log(updateUser)
 };
 
 makeStrictEnum()
