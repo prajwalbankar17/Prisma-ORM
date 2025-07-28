@@ -61,13 +61,17 @@ const main = async () => {
 // console.log(updateUser)
 
 //update multiple users
-const updateUser = await prisma.user.updateMany({
-    where : {name:"prajwal"},
-    data: {email:"prajwal_updated@gmail.com"}
-})
-console.log(updateUser)
+// const updateUser = await prisma.user.updateMany({
+//     where : {name:"prajwal"},
+//     data: {email:"prajwal_updated@gmail.com"}
+// })
+// console.log(updateUser)
 
-};
+//Delete (Remove Data)
+//Delete One User
+const deletedUser = await prisma.user.delete({
+    where: { id: 1 },
+});
 
 makeStrictEnum()
   .catch((e) => console.log(e))
