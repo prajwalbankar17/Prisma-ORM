@@ -14,14 +14,26 @@ const main = async () => {
 //   console.log("User Created: ", user);
 
   //for multiple Users
-  const newUser = await prisma.user.createMany({
-    data: [
-      { name: "prajwal", email: "prajwal@gmail.com" },
-      { name: "Sai", email: "sai@gmail.com" },
-    ],
-  });
-  console.log("User Created: ", newUser);
-};
+//   const newUser = await prisma.user.createMany({
+//     data: [
+//       { name: "prajwal", email: "prajwal@gmail.com" },
+//       { name: "Sai", email: "sai@gmail.com" },
+//     ],
+//   });
+//   console.log("User Created: ", newUser);
+
+// const newUser = await prisma.user.createMany({
+//     data: [
+//       { name: "prajwal", email: "prajwal@gmail.com" },
+//       { name: "Sai", email: "sai@gmail.com" },
+//     ],
+//   });
+//   console.log("User Created: ", newUser);
+
+//Read (Fetch Data)
+//Get all users
+const users = await prisma.user.findMany();
+console.log("All Users: ", users);
 
 makeStrictEnum()
   .catch((e) => console.log(e))
