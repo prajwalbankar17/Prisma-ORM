@@ -54,11 +54,19 @@ const main = async () => {
 //update (modify data)
 //update one user
 
-const updateUser = await prisma.user.update({
-    where : {id:1},
-    data: {name:"Rocky"}
+// const updateUser = await prisma.user.update({
+//     where : {id:1},
+//     data: {name:"Rocky"}
+// })
+// console.log(updateUser)
+
+//update multiple users
+const updateUser = await prisma.user.updateMany({
+    where : {name:"prajwal"},
+    data: {email:"prajwal_updated@gmail.com"}
 })
 console.log(updateUser)
+
 };
 
 makeStrictEnum()
