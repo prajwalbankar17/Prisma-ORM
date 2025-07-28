@@ -69,9 +69,18 @@ const main = async () => {
 
 //Delete (Remove Data)
 //Delete One User
-const deletedUser = await prisma.user.delete({
-    where: { id: 1 },
+// const deletedUser = await prisma.user.delete({
+//     where: { id: 1 },
+// });
+
+//Delete Many User
+const deletedUsers = await prisma.user.deleteMany({
+    where: [{ id: 1 }, { id: 2 }, { id: 3 }],
 });
+console.log("Deleted Users: ", deletedUsers);
+
+}
+
 
 makeStrictEnum()
   .catch((e) => console.log(e))
