@@ -34,7 +34,16 @@ const main = async () => {
   //Get all users
   const users = await prisma.user.findMany();
   console.log("All Users: ", users);
+
+  //Get a single users by ID
+  const user = await prisma.user.findUnique({
+    where: {
+      id: 1,
+    },
+  });
+  console.log("User: ", user);
 };
+
 makeStrictEnum()
   .catch((e) => console.log(e))
   .finally(async () => {
