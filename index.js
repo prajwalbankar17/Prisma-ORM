@@ -36,9 +36,17 @@ const main = async () => {
   console.log("All Users: ", users);
 
   //Get a single users by ID
-  const user = await prisma.user.findUnique({
+//   const user = await prisma.user.findUnique({
+//     where: {
+//       id: 1,
+//     },
+//   });
+//   console.log("User: ", user);
+
+    //Get users with filtering
+  const user = await prisma.user.findMany({
     where: {
-      id: 1,
+      name: prajwal,
     },
   });
   console.log("User: ", user);
